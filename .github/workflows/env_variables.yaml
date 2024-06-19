@@ -14,8 +14,8 @@ jobs:
             id: var_source_step
             run: |
                 echo "perform random task"
-                echo "::set-output name=var1_name::Kirito::"
-                echo "::set-output name=var2_name::Kirito2::"
+                echo "::set-output name=var1_name::Kirito"
+                echo "::set-output name=var2_name::Kirito2"
 
         -   name: get-variable
             run: |
