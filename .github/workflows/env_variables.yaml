@@ -6,9 +6,9 @@ jobs:
     passing-value-btw-steps:    
         runs-on: ubuntu-latest
         steps:
-        -   name: set value
+        -   name: set-value
             run: |
-                echo "variableName=this-is-my-value" >> $GITHUB_ENV
+                echo "variableName=this-is-value" >> $GITHUB_ENV
         
         -   name: create a variable
             id: var_source_step
@@ -17,7 +17,7 @@ jobs:
                 echo "::set-output name=var1_name::Kirito::"
                 echo "::set-output name=var2_name::Kirito2::"
 
-        -   name: get variable
+        -   name: get-variable
             run: |
                 echo "printing variables"
                 echo variableName: ${{ env.variableName }}
