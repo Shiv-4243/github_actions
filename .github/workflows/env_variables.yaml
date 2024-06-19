@@ -1,6 +1,5 @@
 name: passing variable to next step
 
-on: workflow_dispatch
 on: push
 
 
