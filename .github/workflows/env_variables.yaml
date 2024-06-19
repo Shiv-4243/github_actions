@@ -1,10 +1,7 @@
 name: passing variable to next step
 
 on: push
-
-
-
-    
+   
 jobs:
     passing-value-btw-steps:    
         runs-on: ubuntu-latest
