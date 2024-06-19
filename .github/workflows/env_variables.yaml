@@ -1,6 +1,6 @@
 name: passing variable to next step
 
-on: push
+on: workflow_dispatch
    
 jobs:
     passing-value-btw-steps:    
