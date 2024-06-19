@@ -1,0 +1,25 @@
+name: passing variable to next step
+
+on: workflow_dispatch
+    
+jobs:
+    passing-value-btw-steps:    
+        runs-on: ubuntu-latest
+        steps:
+        -   name: set value
+            run: |
+                echo "variableName=this-is-my-value" >> $GITHUB_ENV
+        
+        -   name: create a variable
+            id: var_source_step
+            run: |
+                echo "perform random task"
+                echo "::set-output name=var1_name::Kirito::"
+                echo "::set-output name=var2_name::Kirito2::"
+
+        -   name: get variable
+            run: |
+                echo "printing variables"
+                echo variableName: ${{ env.variableName }}
+                echo var1_name: ${{ steps.var_source_step.outputs.var1_name }}
+                echo var2_name: ${{ steps.var_source_step.outputs.var2_name }}
